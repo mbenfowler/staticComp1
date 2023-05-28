@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = google.visualization.arrayToDataTable([
+            ['', '', { role: 'style' }],
+            ['S', 30, 'color: #37a7b5'],
+            ['M', 210, 'color: #37a7b5'],
+            ['T', 290, 'color: #37a7b5'],
+            ['W', 382, 'color: #37a7b5'],
+            ['T', 160, 'color: #37a7b5'],
+            ['F', 230, 'color: #37a7b5'],
+            ['S', 105, 'color: #37a7b5'],
+            ['S', 24, 'color: #37a7b5'],
+            ['M', 305, 'color: #37a7b5'],
+            ['T', 390, 'color: #37a7b5'],
+            ['W', 252, 'color: #37a7b5'],
+            ['T', 201, 'color: #37a7b5'],
+            ['F', 163, 'color: #37a7b5'],
+            ['S', 57, 'color: #37a7b5']
+        ]);
+
+        // Set chart options
+        var options = { 
+            width: 500,
+            animation: {
+                startup: true,
+                duration: 1000,
+            } 
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+    <nav id="sidebarNav">
+        <div id="userArea">
+            <img src='assets/newton.png'>
+            <p>Newton Barley ▿</p>
+        </div>
+        <section class="nav-panel">
+            Main
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>HOME</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>JOBS</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>RESUMES</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>TASKS</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>CALENDAR</p>
+            </div>
+        </section>
+        <section class="nav-panel">
+            Admin
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>USERS</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>LOCATIONS</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>WORKFLOWS</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>JOB BOARDS</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>SOCIAL</p>
+            </div>
+        </section>
+        <section class="nav-panel">
+            Categories
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>Administrative</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>Design</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>Executive</p>
+            </div>
+            <div class="nav-button">
+                <img src="assets/home.png"/>
+                <p>Human Resources</p>
+            </div>
+        </section>
+    </nav>
+    <main>
+        <header>
+            <button></button>
+            <input />
+            <button></button>
+            <button></button>
+            <button></button>
+        </header>
+        <section class="flex" id="jobTitleSection">
+            <div id="jobTitle">
+                <h1>Customer Service Representative</h1>
+                <div class="row">
+                    <img />
+                    <p>San Francisco </p>
+                    ·
+                    <p> Preview this post</p>
+                </div>
+            </div>
+            <div class="row">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </section>
+        <nav class="row" id="tabs">
+            <p class="tab">SUMMARY</p>
+            <p class="tab">APPLICANTS</p>
+            <p class="tab">JOB BOARD</p>
+            <p class="tab">INTERVIEWS</p>
+            <p class="tab">ACTIVITY</p>
+            <p class="tab">BROADCAST</p>
+            <p class="tab">NOTIFICATIONS</p>
+        </nav>
+        <section id="graphArea">
+            <section>
+                <div></div>
+                <button>TOTALS - Out of 5,231 views</button>
+            </section>
+            <section>
+                <div id="chart_div"></div>
+                <button>APPLICANTS/DAY</button>
+            </section>
+        </section>
+        <section id="bottomSection">
+            <section id="jobDescription">
+                <div class="job-desc-head">
+                    <p>JOB DESCRIPTION</p>
+                    <button>EDIT</button>
+                </div>
+                <div class="job-desc">
+                    <p>POSITION TITLE</p>
+                    <p>Customer Service Representative</p>
+                </div>
+                <div class="job-desc">
+                    <p>LOCATION</p>
+                    <p>San Francisco, CA</p>
+                </div>
+                <div class="job-desc">
+                    <p>EMPLOYMENT TYPE</p>
+                    <p>Full-time</p>
+                </div>
+                <div class="job-desc">
+                    <p>EXPERIENCE</p>
+                    <p>Mid-level</p>
+                </div>
+                <div class="job-desc">
+                    <p>STATUS</p>
+                    <p>Open</p>
+                </div>
+                <div class="job-desc">
+                    <p>DESCRIPTION</p>
+                    <p>The Customer Service Representative is responsible for interacting with and providing quality assistance to all radical customers, responsible for keeping up-to-date on the various product shizzle; helping the bidness reduce customer service wait times while doing a backhand spring and eating a ham sandwich.</p>
+                </div>
+                <div class="job-desc">
+                    <p>HIRING LEAD</p>
+                    <img src="" />
+                    <p>Tom Tizzy</p>
+                </div>
+                <div class="job-desc">
+                    <p>APPROVED SALARY</p>
+                    <p>$58,000</p>
+                </div>
+            </section>
+            <section id="share"></section>
+        </section>
+    </main>
+    <script src="./scripts.js"></script>
+</body>
+</html>
